@@ -30,13 +30,37 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+Extend component from react and declare class,
+build constructor ( needs to call super ) and define state,
+render/return
+
 2. Describe the different phases of the component lifecycle.
+
+The constructor/birthing phase binds methods to class and initializes state then builds virtual DOM then componentDidMount. The updating/life phase starts when props or state is changed or forceUpdate() is called, the render function is called and it compares and updates changes then componentDidUpdate. Unmounting/Death phase happen when the component is unmounted from the DOM, componentWillUnmount is used to clean up any leftover mess.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+consructer() - initializing local state and binds methods
+render() - the only required method in a class component, examines this.props and this.state and returns either React element, arrays and fragments, portals, strings and numbers, or booleans or null.
+componentDidMount() - is invoked immeadiately after a component is mounted
+componentDidUpdate() - is not called on initial render, will be invoked immeadiately after an update occurs, may be used to setState but must be wrapped in a condition to prevent ininite loop.
+componentWillUnmount() - invoked immeadiately after a component is unmounted, provides the clean up any side effects or such that may be left over.
+
 4. Define stateful logic.
 
+Stateful logic is code that is "business lofic" built into a component that when called may or may not with state in the component.
+
 5. Describe how to test a React component with React Testing Library.
+
+create test file using a .test.js file format. Import any needed items { render function, fireEvent, and screen }. declare test using test("string used to describe test", () => {
+  arrange
+  <RENDER COMPONENT HERE>
+  act
+  const save queried component to variable
+  fireEvent.something
+  assert
+  expect.thisthing
+}). 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
